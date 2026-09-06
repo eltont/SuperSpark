@@ -18,3 +18,4 @@ __pycache__/
 .venv/
 artifacts/venv-airflow/
 artifacts/airflow-home/
+*.egg-info/
