@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+superspark_airflow/__init__.py
+superspark_airflow/conf.py
+superspark_airflow/get_provider_info.py
+superspark_airflow.egg-info/PKG-INFO
+superspark_airflow.egg-info/SOURCES.txt
+superspark_airflow.egg-info/dependency_links.txt
+superspark_airflow.egg-info/entry_points.txt
+superspark_airflow.egg-info/requires.txt
+superspark_airflow.egg-info/top_level.txt
+superspark_airflow/hooks/__init__.py
+superspark_airflow/hooks/superspark.py
+superspark_airflow/operators/__init__.py
+superspark_airflow/operators/superspark_submit.py
+tests/test_conf.py
+tests/test_operator.py

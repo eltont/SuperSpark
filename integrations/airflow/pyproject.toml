@@ -20,8 +20,9 @@ classifiers = [
   "Topic :: System :: Distributed Computing",
 ]
 dependencies = [
-  "apache-airflow>=2.7.0",
-  "apache-airflow-providers-apache-spark>=4.0.0",
+  # Airflow 3 changed the top-level package layout; pin 2.x for the Spark provider.
+  "apache-airflow>=2.7.0,<3",
+  "apache-airflow-providers-apache-spark>=4.0.0,<6.0.0",
 ]
 
 [project.optional-dependencies]
