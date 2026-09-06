@@ -13,3 +13,4 @@
 | M6 | YARN live pilot | **NOT RUN** | `deploy/yarn/`, inventory incomplete |
 | M7 | Docs + package + STATUS | **PASS** | README, docs/*, `artifacts/packages/superspark-runtime-arm64.tar.gz` |
 | Bootstrap | Colima + images + doctor | **PASS** | doctor 12/0/0; Colima running |
+| Airflow | Provider adaptor + pytest | **PASS** | `integrations/airflow/`, `artifacts/logs/test-airflow.log` |

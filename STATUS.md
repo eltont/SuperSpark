@@ -1,12 +1,14 @@
 # Spark Accelerator — Status
 
-**Last updated:** 2026-09-05  
+**Last updated:** 2026-09-06  
 **Execution mode:** Sequential lead agent (bounded research delegated once for Gluten/ARM pins)  
-**Current milestone:** M7 handoff (local gates largely complete; remote NOT RUN)
+**Current milestone:** M7 handoff + Airflow adaptor
 
 ## Summary
 
 Working Gluten/Velox Spark accelerator on Apple Silicon via Colima Linux/arm64 containers. Pinned **Spark 3.5.5 + Gluten 1.6.0 + Velox IBM `dft-2026_02_06` + JDK 17**. Official Gluten release binaries are amd64-only; local native uses Apache nightly `linux_aarch64` interim jar (documented).
+
+**New:** Apache Airflow adaptor under `integrations/airflow/` (`SuperSparkSubmitOperator`, connection type `superspark`, example smoke DAG). Conf unit tests + operator/DagBag tests via `make test-airflow`.
 
 ## Host notes
 
@@ -29,6 +31,7 @@ Working Gluten/Velox Spark accelerator on Apple Silicon via Colima Linux/arm64 c
 | M5 target K8s | **NOT RUN** | `configs/kubernetes.example.yaml`, `deploy/kubernetes/` |
 | M6 YARN live | **NOT RUN** | `deploy/yarn/`, inventory incomplete |
 | M7 docs/package | **PASS** (local) | README, docs/*, `artifacts/packages/superspark-runtime-arm64.tar.gz` |
+| Airflow adaptor | **PASS** (unit + DagBag) | `integrations/airflow/`, `make test-airflow`, `artifacts/logs/test-airflow.log` |
 
 ## Exact commands that worked
 
@@ -43,6 +46,7 @@ make smoke MODE=native
 make local-up
 ./runner/bin/superspark scenarios --profile local --size tiny
 make report
+make test-airflow
 ```
 
 ## Fair small bench (2026-09-05 evening)
@@ -62,7 +66,8 @@ Evidence: `artifacts/reports/bench-small-fair-latest.md`. Native plans still exe
 2. **ARM64 release-aligned jar:** rebuild from `runtime/docker/Dockerfile.gluten-build` on a ≥64GB ARM runner; replace interim nightly.
 3. **Performance signal:** keep a warm Spark session and/or push to multi-million-row / Parquet-on-disk benches so compute dwarfs startup; or use dedicated Linux hardware.
 4. **Remote K8s/YARN:** fill example configs; live pilots remain NOT RUN without cluster access.
+5. **Airflow live submit:** adaptor conf/operator tests pass; end-to-end spark-submit from a scheduler still needs a Spark connection + runtime images.
 
 ## Agent handoffs
 
-Sequential execution after one research subagent for version/ARM evidence. No conflicting parallel edits.
+Sequential execution after one research subagent for version/ARM evidence. Airflow adaptor added on branch `cursor/airflow-adaptor-47de`. No conflicting parallel edits.

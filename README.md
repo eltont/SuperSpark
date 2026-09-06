@@ -23,6 +23,7 @@ Track build status and gates in [`STATUS.md`](STATUS.md). Version pins live in [
 | Examples | Small PySpark scenarios under `examples/spark/` (no accelerator imports) |
 | Harness | Fixtures, expected results, fair Docker benches, Markdown reports |
 | Deploy profiles | Local Colima/k3d, Kubernetes example, YARN package + wrappers |
+| Airflow adaptor | `integrations/airflow` — `SuperSparkSubmitOperator` (baseline/native/optimized) |
 
 **Modes**
 
@@ -192,6 +193,7 @@ On JDK 17, also open modules for Netty/Arrow (set in the runner for container sm
 | `make package ARCH=…` | Runtime archive |
 | `make validate-k8s` / `deploy-k8s` | Remote K8s (explicit opt-in) |
 | `make package-yarn` / `validate-yarn` | YARN packaging / preflight |
+| `make test-airflow` | Install slim Airflow venv + run adaptor pytest suite |
 
 Logs are written under `artifacts/logs/`. Failures propagate nonzero exit codes.
 
@@ -209,10 +211,20 @@ runner/           # superspark CLI
 examples/spark/   # runnable PySpark scenarios
 benchmarks/       # generators, reporting, fair_bench
 deploy/           # k3d, kubernetes, yarn
+integrations/     # Airflow provider adaptor
 scripts/bootstrap/
 docs/             # architecture, compatibility, ops, methodology
 artifacts/        # local outputs (mostly gitignored)
 ```
+
+### Airflow
+
+```bash
+pip install -e "integrations/airflow[dev]"
+make test-airflow
+```
+
+See [`docs/airflow.md`](docs/airflow.md) and [`integrations/airflow/README.md`](integrations/airflow/README.md).
 
 ---
 
@@ -226,6 +238,7 @@ artifacts/        # local outputs (mostly gitignored)
 | [`docs/operations.md`](docs/operations.md) | Bootstrap, teardown, rollback |
 | [`docs/performance-methodology.md`](docs/performance-methodology.md) | How we measure |
 | [`docs/hadoop-migration.md`](docs/hadoop-migration.md) | YARN / HDFS path |
+| [`docs/airflow.md`](docs/airflow.md) | Airflow operator / provider |
 | [`docs/requirement-checklist.md`](docs/requirement-checklist.md) | Gate → evidence |
 | [`examples/README.md`](examples/README.md) | Scenario catalog |
 
