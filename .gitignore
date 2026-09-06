@@ -16,3 +16,6 @@ spark-warehouse/
 __pycache__/
 *.pyc
 .venv/
+artifacts/venv-airflow/
+artifacts/airflow-home/
+*.egg-info/

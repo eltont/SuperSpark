@@ -22,6 +22,7 @@ Spark retains scheduling, retries, shuffle coordination, and commit semantics. N
 | Optimization | `accelerator/` + configs | Feature-flagged conservative policy |
 | Benchmark harness | `benchmarks/` | Generate, compare, report |
 | Deployment | `deploy/` | k3d, K8s, YARN profiles |
+| Airflow adaptor | `integrations/airflow/` | Mode-aware `SuperSparkSubmitOperator` + hook |
 
 ## Modes
 

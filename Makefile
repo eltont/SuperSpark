@@ -20,7 +20,7 @@ REPORT_DIR := $(ROOT)/artifacts/reports
 .PHONY: help doctor lock-versions check-updates update-versions bootstrap \
 	scenarios-list scenario scenarios build smoke local-up local-test \
 	bench report package validate-k8s deploy-k8s package-yarn validate-yarn \
-	local-down
+	local-down test-airflow
 
 help:
 	@printf '%s\n' \
@@ -32,7 +32,8 @@ help:
 	  '  make build ARCH=arm64|amd64 | package ARCH=...' \
 	  '  make bench PROFILE=local MODE=... | report' \
 	  '  make validate-k8s CONFIG=... | deploy-k8s CONFIG=...' \
-	  '  make package-yarn CONFIG=... | validate-yarn CONFIG=...'
+	  '  make package-yarn CONFIG=... | validate-yarn CONFIG=...' \
+	  '  make test-airflow'
 
 doctor:
 	@mkdir -p "$(LOG_DIR)"
@@ -113,3 +114,7 @@ validate-yarn:
 local-down:
 	@$(ROOT)/scripts/bootstrap/local_down.sh 2>&1 | tee "$(LOG_DIR)/local-down.log"
 	@echo "Logs: $(LOG_DIR)/local-down.log"
+
+test-airflow:
+	@$(ROOT)/scripts/bootstrap/test_airflow.sh 2>&1 | tee "$(LOG_DIR)/test-airflow-make.log"
+	@echo "Logs: $(LOG_DIR)/test-airflow.log"

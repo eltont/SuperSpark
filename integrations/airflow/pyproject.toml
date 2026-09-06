@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "superspark-airflow"
+version = "0.1.0"
+description = "Apache Airflow adaptor for SuperSpark (Gluten/Velox) Spark jobs"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+authors = [{ name = "SuperSpark contributors" }]
+keywords = ["airflow", "spark", "gluten", "velox", "superspark"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Apache Airflow",
+  "Framework :: Apache Airflow :: Provider",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: System :: Distributed Computing",
+]
+dependencies = [
+  # Airflow 3 changed the top-level package layout; pin 2.x for the Spark provider.
+  "apache-airflow>=2.7.0,<3",
+  "apache-airflow-providers-apache-spark>=4.0.0,<6.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-mock>=3.10"]
+
+[project.entry-points."apache_airflow_provider"]
+provider_info = "superspark_airflow.get_provider_info:get_provider_info"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["superspark_airflow*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
