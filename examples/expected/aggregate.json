@@ -1,0 +1,33 @@
+{
+  "checksum": "da3c2fb31f2de50a55a54c553f775d36d3f6bf3c23a7ac067d1175a0900812a4",
+  "row_count": 4,
+  "rows": [
+    {
+      "amount_avg": 218.1667,
+      "amount_sum": 1309.0,
+      "order_count": 6,
+      "region": "central"
+    },
+    {
+      "amount_avg": 218.5714,
+      "amount_sum": 1530.0,
+      "order_count": 7,
+      "region": "east"
+    },
+    {
+      "amount_avg": 222.4286,
+      "amount_sum": 1557.0,
+      "order_count": 7,
+      "region": "south"
+    },
+    {
+      "amount_avg": 192.4286,
+      "amount_sum": 1347.0,
+      "order_count": 7,
+      "region": "west"
+    }
+  ],
+  "scenario": "aggregate",
+  "seed": 42,
+  "size": "tiny"
+}

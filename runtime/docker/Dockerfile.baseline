@@ -1,0 +1,19 @@
+# Baseline Spark runtime (no Gluten)
+ARG SPARK_DIR=spark-3.5.5-bin-hadoop3
+FROM eclipse-temurin:17-jdk-jammy
+
+ENV SPARK_HOME=/opt/spark
+ENV PATH="${SPARK_HOME}/bin:${PATH}"
+ENV PYTHONUNBUFFERED=1
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      python3 python3-pip tini procps curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --no-cache-dir pyarrow==14.0.2 pandas==2.0.3
+
+ARG SPARK_DIR
+COPY ${SPARK_DIR} /opt/spark
+
+WORKDIR /opt/spark
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["bash"]

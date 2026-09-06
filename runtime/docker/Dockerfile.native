@@ -1,0 +1,22 @@
+# Native Spark + Gluten/Velox runtime
+FROM eclipse-temurin:17-jdk-jammy
+
+ENV SPARK_HOME=/opt/spark
+ENV PATH="${SPARK_HOME}/bin:${PATH}"
+ENV PYTHONUNBUFFERED=1
+ENV GLUTEN_JAR=/opt/gluten/gluten-velox-bundle.jar
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+      python3 python3-pip tini procps curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --no-cache-dir pyarrow==14.0.2 pandas==2.0.3 \
+    && mkdir -p /opt/gluten
+
+ARG SPARK_DIR=spark-3.5.5-bin-hadoop3
+ARG GLUTEN_JAR_FILE=gluten-velox-bundle-spark3.5_2.12-linux_aarch64-1.6.0-SNAPSHOT.jar
+COPY ${SPARK_DIR} /opt/spark
+COPY ${GLUTEN_JAR_FILE} /opt/gluten/gluten-velox-bundle.jar
+
+WORKDIR /opt/spark
+ENTRYPOINT ["/usr/bin/tini", "--"]
+CMD ["bash"]

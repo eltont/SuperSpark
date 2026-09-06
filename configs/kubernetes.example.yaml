@@ -1,0 +1,13 @@
+# Example remote Kubernetes profile — fill before deploy-k8s
+profile: kubernetes-example
+context: REPLACE_ME
+namespace: superspark
+image_baseline: REPLACE_REGISTRY/superspark/spark-baseline:3.5.5
+image_native: REPLACE_REGISTRY/superspark/spark-native:3.5.5-gluten1.6.0
+driver_memory: "4g"
+executor_memory: "8g"
+executor_cores: 4
+num_executors: 4
+off_heap: "8g"
+storage: s3
+# Refuse deploy if context/namespace still REPLACE_ME

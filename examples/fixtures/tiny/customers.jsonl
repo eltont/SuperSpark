@@ -1,0 +1,10 @@
+{"country":"US","customer_id":1,"name":"Customer_01","tier":"gold"}
+{"country":"CA","customer_id":2,"name":"Customer_02","tier":"silver"}
+{"country":"UK","customer_id":3,"name":"Customer_03","tier":"bronze"}
+{"country":"DE","customer_id":4,"name":"Customer_04","tier":"gold"}
+{"country":"US","customer_id":5,"name":"Customer_05","tier":"silver"}
+{"country":"CA","customer_id":6,"name":"Customer_06","tier":"bronze"}
+{"country":"UK","customer_id":7,"name":"Customer_07","tier":"gold"}
+{"country":"DE","customer_id":8,"name":"Customer_08","tier":"silver"}
+{"country":"US","customer_id":9,"name":"Customer_09","tier":"bronze"}
+{"country":"CA","customer_id":10,"name":"Customer_10","tier":"gold"}

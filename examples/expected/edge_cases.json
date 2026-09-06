@@ -1,0 +1,65 @@
+{
+  "checksum": "4689f3a135294f4d73e2c13167c74eba492b14fa1d9827a0eba326f5987d353c",
+  "row_count": 8,
+  "rows": [
+    {
+      "a_is_null": false,
+      "id": 1,
+      "n_is_null": false,
+      "ratio": 0.5,
+      "trimmed": "ok"
+    },
+    {
+      "a_is_null": true,
+      "id": 2,
+      "n_is_null": true,
+      "ratio": null,
+      "trimmed": null
+    },
+    {
+      "a_is_null": false,
+      "id": 3,
+      "n_is_null": false,
+      "ratio": null,
+      "trimmed": ""
+    },
+    {
+      "a_is_null": false,
+      "id": 4,
+      "n_is_null": false,
+      "ratio": -0.5,
+      "trimmed": "pad"
+    },
+    {
+      "a_is_null": false,
+      "id": 5,
+      "n_is_null": false,
+      "ratio": 1.0,
+      "trimmed": "unicode-\u2713"
+    },
+    {
+      "a_is_null": false,
+      "id": 6,
+      "n_is_null": false,
+      "ratio": "NaN",
+      "trimmed": "nan-a"
+    },
+    {
+      "a_is_null": false,
+      "id": 7,
+      "n_is_null": false,
+      "ratio": null,
+      "trimmed": "div0-guard"
+    },
+    {
+      "a_is_null": false,
+      "id": 8,
+      "n_is_null": false,
+      "ratio": 0.5,
+      "trimmed": "Caf\u00e9"
+    }
+  ],
+  "scenario": "edge_cases",
+  "seed": 42,
+  "size": "tiny"
+}

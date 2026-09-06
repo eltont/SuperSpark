@@ -1,0 +1,10 @@
+# Example YARN profile — complete via deploy/yarn/inventory.sh
+profile: yarn-example
+hadoop_version: REPLACE_ME
+spark_version_on_cluster: REPLACE_ME
+java_version: REPLACE_ME
+kerberos: false
+queue: default
+archives_hdfs_path: hdfs:///user/REPLACE/superspark/
+baseline_submit_wrapper: deploy/yarn/submit-baseline.sh
+native_submit_wrapper: deploy/yarn/submit-native.sh

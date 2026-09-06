@@ -1,0 +1,81 @@
+{
+  "checksum": "89193b37a060e42f5be2a0a799644b271ab3d1efcfe7967e6a1804861780f939",
+  "row_count": 8,
+  "rows": [
+    {
+      "digits_masked": "Hello World",
+      "id": 1,
+      "locale": "en",
+      "lower_text": "hello world",
+      "prefix5": "Hello",
+      "trimmed": "Hello World",
+      "upper_text": "HELLO WORLD"
+    },
+    {
+      "digits_masked": "spark SQL rocks",
+      "id": 2,
+      "locale": "de",
+      "lower_text": "spark sql rocks",
+      "prefix5": "spark",
+      "trimmed": "spark SQL rocks",
+      "upper_text": "SPARK SQL ROCKS"
+    },
+    {
+      "digits_masked": "Caf\u00e9 M\u00fcnch\u00ebn",
+      "id": 3,
+      "locale": "fr",
+      "lower_text": "caf\u00e9 m\u00fcnch\u00ebn",
+      "prefix5": "Caf\u00e9 ",
+      "trimmed": "Caf\u00e9 M\u00fcnch\u00ebn",
+      "upper_text": "CAF\u00c9 M\u00dcNCH\u00cbN"
+    },
+    {
+      "digits_masked": "foo-bar-baz",
+      "id": 4,
+      "locale": "en",
+      "lower_text": "foo-bar-baz",
+      "prefix5": "foo-b",
+      "trimmed": "foo-bar-baz",
+      "upper_text": "FOO-BAR-BAZ"
+    },
+    {
+      "digits_masked": "UPPER and lower",
+      "id": 5,
+      "locale": "en",
+      "lower_text": "upper and lower",
+      "prefix5": "UPPER",
+      "trimmed": "UPPER and lower",
+      "upper_text": "UPPER AND LOWER"
+    },
+    {
+      "digits_masked": "a@b.co",
+      "id": 7,
+      "locale": "fr",
+      "lower_text": "a@b.co",
+      "prefix5": "a@b.c",
+      "trimmed": "a@b.co",
+      "upper_text": "A@B.CO"
+    },
+    {
+      "digits_masked": "Gluten+Velox",
+      "id": 9,
+      "locale": "en",
+      "lower_text": "gluten+velox",
+      "prefix5": "Glute",
+      "trimmed": "Gluten+Velox",
+      "upper_text": "GLUTEN+VELOX"
+    },
+    {
+      "digits_masked": "repeat repeat",
+      "id": 10,
+      "locale": "de",
+      "lower_text": "repeat repeat",
+      "prefix5": "repea",
+      "trimmed": "repeat repeat",
+      "upper_text": "REPEAT REPEAT"
+    }
+  ],
+  "scenario": "strings",
+  "seed": 42,
+  "size": "tiny"
+}

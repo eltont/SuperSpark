@@ -1,0 +1,8 @@
+{"a":1.0,"a_was_nan":false,"b":2.0,"id":1,"n":1,"s":"ok"}
+{"a":null,"a_was_nan":false,"b":2.0,"id":2,"n":null,"s":null}
+{"a":0.0,"a_was_nan":false,"b":0.0,"id":3,"n":0,"s":""}
+{"a":-1.5,"a_was_nan":false,"b":3.0,"id":4,"n":-3,"s":"  pad  "}
+{"a":1e+308,"a_was_nan":false,"b":1e+308,"id":5,"n":42,"s":"unicode-\u2713"}
+{"a":null,"a_was_nan":true,"b":1.0,"id":6,"n":7,"s":"nan-a"}
+{"a":4.0,"a_was_nan":false,"b":null,"id":7,"n":2,"s":"div0-guard"}
+{"a":2.5,"a_was_nan":false,"b":5.0,"id":8,"n":3,"s":"Caf\u00e9"}

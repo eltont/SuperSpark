@@ -1,0 +1,11 @@
+profile: local
+spark_version: "3.5.5"
+driver_memory: "1g"
+executor_memory: "1536m"
+executor_cores: 2
+num_executors: 2
+off_heap: "1536m"
+master: "local[4]"
+storage: local-file
+data_dir: artifacts/data
+event_log_dir: artifacts/logs/events

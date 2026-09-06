@@ -1,0 +1,43 @@
+SuperSpark
+Copyright 2026 SuperSpark contributors
+
+This product is licensed under the Apache License, Version 2.0.
+See the LICENSE file for the full text.
+
+--------------------------------------------------------------------
+This product redistributes and/or depends on software developed by
+third parties. Their licenses apply to those components. Notable
+upstream projects include (non-exhaustive):
+
+  - Apache Spark
+    https://spark.apache.org/
+    Licensed under the Apache License, Version 2.0
+
+  - Apache Gluten
+    https://gluten.apache.org/
+    Licensed under the Apache License, Version 2.0
+
+  - Velox (IBM/Meta fork as required by Gluten)
+    https://github.com/IBM/velox
+    https://github.com/facebookincubator/velox
+    Licensed under the Apache License, Version 2.0
+
+  - Apache Hadoop client libraries (as bundled with Spark distributions)
+    https://hadoop.apache.org/
+    Licensed under the Apache License, Version 2.0
+
+  - Eclipse Temurin / OpenJDK (runtime dependency)
+    https://adoptium.net/
+    GPL-2.0 with Classpath Exception (typical OpenJDK terms)
+
+  - Python packages used in orchestration examples (e.g. PySpark)
+    Subject to their respective licenses as declared by those packages
+
+Binary Gluten/Velox native libraries obtained from Apache downloads or
+nightlies remain under their upstream Apache License terms and any
+accompanying NOTICE files from those releases. When redistributing
+images or archives that embed those binaries, retain upstream NOTICE
+and LICENSE material.
+
+This NOTICE file is provided for attribution and does not modify the
+Apache License, Version 2.0 terms that govern SuperSpark itself.

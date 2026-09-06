@@ -1,0 +1,73 @@
+{
+  "checksum": "e197565a83c2cb01993e9312deaceca63264ab77dcb771d862aba21f21beb698",
+  "row_count": 8,
+  "rows": [
+    {
+      "amount": 13.5,
+      "country": "US",
+      "customer_id": 1,
+      "name": "Customer_01",
+      "order_id": 1,
+      "region": "west"
+    },
+    {
+      "amount": 54.0,
+      "country": "DE",
+      "customer_id": 4,
+      "name": "Customer_04",
+      "order_id": 4,
+      "region": "south"
+    },
+    {
+      "amount": 70.0,
+      "country": "UK",
+      "customer_id": 7,
+      "name": "Customer_07",
+      "order_id": 7,
+      "region": "central"
+    },
+    {
+      "amount": 110.5,
+      "country": "CA",
+      "customer_id": 10,
+      "name": "Customer_10",
+      "order_id": 10,
+      "region": "east"
+    },
+    {
+      "amount": 320.5,
+      "country": "US",
+      "customer_id": 1,
+      "name": "Customer_01",
+      "order_id": 31,
+      "region": "central"
+    },
+    {
+      "amount": 361.0,
+      "country": "DE",
+      "customer_id": 4,
+      "name": "Customer_04",
+      "order_id": 34,
+      "region": "east"
+    },
+    {
+      "amount": 377.0,
+      "country": "UK",
+      "customer_id": 7,
+      "name": "Customer_07",
+      "order_id": 37,
+      "region": "west"
+    },
+    {
+      "amount": 417.5,
+      "country": "CA",
+      "customer_id": 10,
+      "name": "Customer_10",
+      "order_id": 40,
+      "region": "south"
+    }
+  ],
+  "scenario": "joins",
+  "seed": 42,
+  "size": "tiny"
+}

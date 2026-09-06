@@ -1,0 +1,15 @@
+{
+  "checksum": "54c235ff2b778d9fc38cc9faf82a7c8eba4c5ecfedd4d0b00d3d1809f16bb91c",
+  "row_count": 1,
+  "rows": [
+    {
+      "amount_sum": 8620.0,
+      "max_order_id": 40,
+      "min_order_id": 1,
+      "row_count": 40
+    }
+  ],
+  "scenario": "parquet_roundtrip",
+  "seed": 42,
+  "size": "tiny"
+}

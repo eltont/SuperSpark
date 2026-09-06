@@ -1,0 +1,79 @@
+{
+  "checksum": "59f8ce01f394df57e66423935c0e96a40c0ab417facfea6d6d3f1354ec70a323",
+  "row_count": 14,
+  "rows": [
+    {
+      "amount": 13.5,
+      "amount_bucket": "low",
+      "order_id": 1
+    },
+    {
+      "amount": 54.0,
+      "amount_bucket": "low",
+      "order_id": 4
+    },
+    {
+      "amount": 70.0,
+      "amount_bucket": "low",
+      "order_id": 7
+    },
+    {
+      "amount": 110.5,
+      "amount_bucket": "mid",
+      "order_id": 10
+    },
+    {
+      "amount": 151.0,
+      "amount_bucket": "mid",
+      "order_id": 13
+    },
+    {
+      "amount": 167.0,
+      "amount_bucket": "mid",
+      "order_id": 16
+    },
+    {
+      "amount": 207.5,
+      "amount_bucket": "mid",
+      "order_id": 19
+    },
+    {
+      "amount": 223.5,
+      "amount_bucket": "mid",
+      "order_id": 22
+    },
+    {
+      "amount": 264.0,
+      "amount_bucket": "mid",
+      "order_id": 25
+    },
+    {
+      "amount": 280.0,
+      "amount_bucket": "mid",
+      "order_id": 28
+    },
+    {
+      "amount": 320.5,
+      "amount_bucket": "high",
+      "order_id": 31
+    },
+    {
+      "amount": 361.0,
+      "amount_bucket": "high",
+      "order_id": 34
+    },
+    {
+      "amount": 377.0,
+      "amount_bucket": "high",
+      "order_id": 37
+    },
+    {
+      "amount": 417.5,
+      "amount_bucket": "high",
+      "order_id": 40
+    }
+  ],
+  "scenario": "fallback_udf",
+  "seed": 42,
+  "size": "tiny"
+}

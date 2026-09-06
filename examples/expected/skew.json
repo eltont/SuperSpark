@@ -1,0 +1,65 @@
+{
+  "checksum": "7e16e4a47ae27b11bc229550949755992f9caa362dadbfb3c0a5e2fe56ee398d",
+  "row_count": 8,
+  "rows": [
+    {
+      "event_count": 80,
+      "key": 1,
+      "label": "bucket_1",
+      "value_sum": 3332.0,
+      "weight": 10
+    },
+    {
+      "event_count": 10,
+      "key": 2,
+      "label": "bucket_2",
+      "value_sum": 459.5,
+      "weight": 20
+    },
+    {
+      "event_count": 5,
+      "key": 3,
+      "label": "bucket_3",
+      "value_sum": 295.0,
+      "weight": 30
+    },
+    {
+      "event_count": 1,
+      "key": 4,
+      "label": "bucket_4",
+      "value_sum": 64.4,
+      "weight": 40
+    },
+    {
+      "event_count": 1,
+      "key": 5,
+      "label": "bucket_5",
+      "value_sum": 66.4,
+      "weight": 50
+    },
+    {
+      "event_count": 1,
+      "key": 6,
+      "label": "bucket_6",
+      "value_sum": 68.4,
+      "weight": 60
+    },
+    {
+      "event_count": 1,
+      "key": 7,
+      "label": "bucket_7",
+      "value_sum": 70.4,
+      "weight": 70
+    },
+    {
+      "event_count": 1,
+      "key": 8,
+      "label": "bucket_8",
+      "value_sum": 72.4,
+      "weight": 80
+    }
+  ],
+  "scenario": "skew",
+  "seed": 42,
+  "size": "tiny"
+}

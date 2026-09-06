@@ -1,0 +1,15 @@
+profile: k3d
+spark_version: "3.5.5"
+namespace: superspark
+kubeconfig: artifacts/kubeconfig-superspark.yaml
+image_baseline: superspark/spark-baseline:3.5.5
+image_native: superspark/spark-native:3.5.5-gluten1.6.0
+driver_memory: "1g"
+executor_memory: "1536m"
+executor_cores: 2
+num_executors: 2
+off_heap: "1536m"
+storage: s3
+s3_endpoint: http://minio.superspark.svc.cluster.local:9000
+s3_bucket: superspark
+event_log_dir: s3a://superspark/eventlogs

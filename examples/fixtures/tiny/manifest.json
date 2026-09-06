@@ -1,0 +1,13 @@
+{
+  "files": {
+    "customers": 10,
+    "dim_keys": 8,
+    "edge_rows": 8,
+    "line_items": 80,
+    "orders": 40,
+    "products": 8,
+    "skew_events": 100,
+    "text_rows": 10
+  },
+  "seed": 42
+}

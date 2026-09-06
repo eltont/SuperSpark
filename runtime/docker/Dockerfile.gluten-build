@@ -1,0 +1,23 @@
+# Optional: rebuild Gluten 1.6.0 from source for linux/aarch64
+# Requires large memory (docs recommend 64GB). On ~24GB hosts set NUM_THREADS=1|2.
+FROM ubuntu:22.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV CPU_TARGET=aarch64
+ENV NUM_THREADS=2
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-arm64
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      openjdk-17-jdk maven git curl ca-certificates build-essential \
+      cmake ninja-build ccache python3 python3-pip sudo \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /src
+RUN curl -fsSL -o gluten-src.tar.gz \
+      https://downloads.apache.org/gluten/1.6.0/apache-gluten-1.6.0-src.tar.gz \
+ && echo "c393e0a8a2574fae72d493bc334ea25cfe8bb19992fd461d59bf2183ae6f609d662aa3e1021e3e0b00c6efee76ddf3bf589f13eb8050e41c1f8718f1df2e0021  gluten-src.tar.gz" | sha512sum -c - \
+ && mkdir gluten && tar -xzf gluten-src.tar.gz -C gluten --strip-components=1
+
+WORKDIR /src/gluten
+# Build intentionally left as the container CMD so CI/remote runners can mount caches.
+CMD ["bash", "-lc", "export CPU_TARGET=aarch64 NUM_THREADS=${NUM_THREADS:-2}; ./dev/buildbundle-veloxbe.sh --build_level=release -Pspark-3.5"]

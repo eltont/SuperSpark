@@ -1,0 +1,86 @@
+# Spark Accelerator — pinned versions
+# Access date: 2026-09-05 (America/Los_Angeles) / 2026-09-06 UTC
+# Strategy: Gluten 1.6.0 (latest stable) + Spark 3.5.5 (Gluten-official default for 3.x).
+# Newest Spark (4.2.0) is NOT Gluten-compatible; newest Gluten-compatible Spark line is 4.0.x.
+# Selected Spark 3.5.5 for Scala 2.12 maturity and ARM64 nightly availability.
+
+schema_version: 1
+resolved_at: "2026-09-06T00:50:00Z"
+
+spark:
+  version: "3.5.5"
+  distribution: "spark-3.5.5-bin-hadoop3.tgz"
+  scala: "2.12"
+  url: "https://archive.apache.org/dist/spark/spark-3.5.5/spark-3.5.5-bin-hadoop3.tgz"
+  sha512: "ec5ff678136b1ff981e396d1f7b5dfbf399439c5cb853917e8c954723194857607494a89b7e205fce988ec48b1590b5caeae3b18e1b5db1370c0522b256ff376"
+  latest_available_at_resolve: "3.5.9"
+  upgrade_path: "Retest Gluten 1.6.0 / next Gluten against Spark 3.5.9 patch; prefer Gluten release notes before bumping."
+
+gluten:
+  version: "1.6.0"
+  tag: "v1.6.0"
+  commit: "89718982ff3731446bbdb0882d1d4184158952b8"
+  source_url: "https://downloads.apache.org/gluten/1.6.0/apache-gluten-1.6.0-src.tar.gz"
+  source_sha512: "c393e0a8a2574fae72d493bc334ea25cfe8bb19992fd461d59bf2183ae6f609d662aa3e1021e3e0b00c6efee76ddf3bf589f13eb8050e41c1f8718f1df2e0021"
+  official_bin_spark35_url: "https://downloads.apache.org/gluten/1.6.0/apache-gluten-1.6.0-bin-spark-3.5.tar.gz"
+  official_bin_spark35_sha512: "b087e962bc244d3ba4b687a953ca508182f43da962a7674d68bd9727191d6a6d124b843acefd70836cdd00647d35a45ffacd20c8989237e0d8c92c4289093a5c"
+  official_bin_arch: "linux/amd64"  # CentOS7 static x86_64 only
+  # Interim ARM64 artifact for local M1 Linux-container smoke (NOT the official release binary)
+  arm64_interim:
+    kind: "apache-nightly-snapshot"
+    jar: "gluten-velox-bundle-spark3.5_2.12-linux_aarch64-1.6.0-SNAPSHOT.jar"
+    url: "https://nightlies.apache.org/gluten/nightly-release-jdk17/gluten-velox-bundle-spark3.5_2.12-linux_aarch64-1.6.0-SNAPSHOT.jar"
+    dated: "2026-02-13"
+    note: "Unofficial SNAPSHOT for linux/aarch64 smoke until v1.6.0 is rebuilt from source with CPU_TARGET=aarch64."
+
+velox:
+  repo: "https://github.com/IBM/velox.git"
+  branch_or_tag: "dft-2026_02_06"
+  commit: "f247a8e922c4802fd9b9cf7a626421bff9b803fd"
+  enhanced_tag: "ibm-2026_02_06"
+  note: "Use Gluten-required IBM fork; do not substitute facebookincubator/velox tip."
+
+java:
+  version: "17"
+  distribution: "Eclipse Temurin"
+  reason: "Gluten 1.6.0 supports JDK 8/17; JDK 17 chosen for Spark 3.5 and container base images."
+
+scala:
+  version: "2.12"
+  reason: "Required for Spark 3.5 Gluten profile."
+
+python:
+  version: "3.12"
+  min_supported: "3.9"
+
+container:
+  base_image: "eclipse-temurin:17-jdk-jammy"
+  base_image_note: "Pin digest at image build time via `docker buildx imagetools inspect`."
+  runtime_preferred: "colima"  # Docker Desktop absent / requires interactive admin
+  docker_cli: "27.5.1"
+  k3d: "v5.8.3"
+  kubectl: "v1.32.2"
+  colima: "v0.8.1"
+  lima: "v1.0.4"
+
+hadoop_client:
+  version: "3.3.4"  # bundled with spark-3.5.5-bin-hadoop3
+  yarn_target_profile: "collect via deploy/yarn/inventory.sh"
+
+build:
+  num_threads_low_memory: 2
+  recommended_build_memory_gb: 64
+  host_memory_gb_observed: 24
+  arm64_strategy: "prefer_interim_nightly_then_source_rebuild"
+
+exceptions:
+  - component: spark
+    latest_available: "4.2.0"
+    selected: "3.5.5"
+    blocker: "Gluten 1.6.0 supports through Spark 4.0.x (Scala 2.13); 4.2.0 unsupported. 3.5.5 is Gluten's documented Spark 3.5 pin."
+    evidence: "https://raw.githubusercontent.com/apache/gluten/v1.6.0/docs/get-started/Velox.md"
+  - component: gluten_binary_arm64
+    latest_available: "official release amd64 only"
+    selected: "nightly linux_aarch64 1.6.0-SNAPSHOT + source rebuild recipe"
+    blocker: "No official aarch64 tarball on downloads.apache.org/gluten/1.6.0/"
+    evidence: "https://downloads.apache.org/gluten/1.6.0/"

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+export PATH="${HOME}/.local/bin:${PATH}"
+export JAVA_HOME="${JAVA_HOME:-${HOME}/.local/opt/jdk-17}"
+export SPARK_HOME="${SPARK_HOME:-${ROOT}/artifacts/cache/spark-3.5.5-bin-hadoop3}"
+export SUPERSPARK_ROOT="$ROOT"
+export PYTHONPATH="${ROOT}/examples/spark:${ROOT}/runner/python:${PYTHONPATH:-}"
+
+exec python3 -m superspark_runner "$@"

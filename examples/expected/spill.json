@@ -1,0 +1,69 @@
+{
+  "checksum": "e909bebb3274dc2ad1c6f87b37d39b17963156c57bd6a9e8651a509354f9838d",
+  "row_count": 12,
+  "rows": [
+    {
+      "amount": 404.0,
+      "order_id": 39,
+      "region": "central"
+    },
+    {
+      "amount": 350.0,
+      "order_id": 35,
+      "region": "central"
+    },
+    {
+      "amount": 320.5,
+      "order_id": 31,
+      "region": "central"
+    },
+    {
+      "amount": 390.5,
+      "order_id": 38,
+      "region": "east"
+    },
+    {
+      "amount": 361.0,
+      "order_id": 34,
+      "region": "east"
+    },
+    {
+      "amount": 307.0,
+      "order_id": 30,
+      "region": "east"
+    },
+    {
+      "amount": 417.5,
+      "order_id": 40,
+      "region": "south"
+    },
+    {
+      "amount": 363.5,
+      "order_id": 36,
+      "region": "south"
+    },
+    {
+      "amount": 334.0,
+      "order_id": 32,
+      "region": "south"
+    },
+    {
+      "amount": 377.0,
+      "order_id": 37,
+      "region": "west"
+    },
+    {
+      "amount": 347.5,
+      "order_id": 33,
+      "region": "west"
+    },
+    {
+      "amount": 293.5,
+      "order_id": 29,
+      "region": "west"
+    }
+  ],
+  "scenario": "spill",
+  "seed": 42,
+  "size": "tiny"
+}

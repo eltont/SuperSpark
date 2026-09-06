@@ -1,0 +1,25 @@
+{
+  "checksum": "e8799e63493f2791c36335c518dd30cb1f3067b8de8f9558cbdbfc68d98b0d99",
+  "row_count": 4,
+  "rows": [
+    {
+      "cnt": 10,
+      "region": "central"
+    },
+    {
+      "cnt": 10,
+      "region": "east"
+    },
+    {
+      "cnt": 10,
+      "region": "south"
+    },
+    {
+      "cnt": 10,
+      "region": "west"
+    }
+  ],
+  "scenario": "small_files",
+  "seed": 42,
+  "size": "tiny"
+}

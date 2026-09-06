@@ -1,0 +1,79 @@
+{
+  "checksum": "bff7a9f1b84db5375deb480c07e6a60708501a696c747657824b6da213a547dc",
+  "row_count": 10,
+  "rows": [
+    {
+      "amount": 417.5,
+      "customer_id": 10,
+      "order_id": 40,
+      "region": "south",
+      "status": "complete"
+    },
+    {
+      "amount": 404.0,
+      "customer_id": 9,
+      "order_id": 39,
+      "region": "central",
+      "status": "cancelled"
+    },
+    {
+      "amount": 390.5,
+      "customer_id": 8,
+      "order_id": 38,
+      "region": "east",
+      "status": "pending"
+    },
+    {
+      "amount": 377.0,
+      "customer_id": 7,
+      "order_id": 37,
+      "region": "west",
+      "status": "complete"
+    },
+    {
+      "amount": 363.5,
+      "customer_id": 6,
+      "order_id": 36,
+      "region": "south",
+      "status": "cancelled"
+    },
+    {
+      "amount": 361.0,
+      "customer_id": 4,
+      "order_id": 34,
+      "region": "east",
+      "status": "complete"
+    },
+    {
+      "amount": 350.0,
+      "customer_id": 5,
+      "order_id": 35,
+      "region": "central",
+      "status": "pending"
+    },
+    {
+      "amount": 347.5,
+      "customer_id": 3,
+      "order_id": 33,
+      "region": "west",
+      "status": "cancelled"
+    },
+    {
+      "amount": 334.0,
+      "customer_id": 2,
+      "order_id": 32,
+      "region": "south",
+      "status": "pending"
+    },
+    {
+      "amount": 320.5,
+      "customer_id": 1,
+      "order_id": 31,
+      "region": "central",
+      "status": "complete"
+    }
+  ],
+  "scenario": "sort_topk",
+  "seed": 42,
+  "size": "tiny"
+}
