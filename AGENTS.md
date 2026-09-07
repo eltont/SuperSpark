@@ -25,6 +25,7 @@ When delegation is unavailable, execute sequentially and record that in `STATUS.
 5. One execution mode per run (`baseline` | `native` | `optimized`).
 6. Serialize heavy native builds and benchmarks on this laptop.
 7. Ask the user only when an external fact blocks safe progress.
+8. **Git identity (hard rule):** every commit’s author **and** committer must be `eltont <6650713+eltont@users.noreply.github.com>`. Never commit as `Cursor Agent` / `cursoragent@cursor.com`. Do not rely on Cloud Agent defaults; before the first commit in a session set repo-local identity (`git config --local user.name eltont` and `user.email 6650713+eltont@users.noreply.github.com`) or pass equivalent `-c` / `GIT_AUTHOR_*` / `GIT_COMMITTER_*` overrides. Do not add a `Co-authored-by: Cursor Agent` trailer.
 
 ## Resource lock
 
